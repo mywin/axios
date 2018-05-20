@@ -1,6 +1,6 @@
 easy-mock-template-axios
 ---
-基于 axios 的接口定义模板。
+基于 axios 的接口定义模板e。
 
 Documentation
 ---
