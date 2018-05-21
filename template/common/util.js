@@ -1,6 +1,6 @@
-import instance from '@/util/request'
-function createAPI(baseURL) {
-  return function (conf) {
+import instance from '@/utils/request'
+export function createAPI(baseURL) {
+  return (conf) => {
     conf = conf || {}
     return instance(Object.assign({}, {
       url: conf.url,
@@ -9,7 +9,7 @@ function createAPI(baseURL) {
     }, conf.opts))
   }
 }
-function convertRESTAPI(url, opts) {
+export function convertRESTAPI(url, opts) {
   if (!opts || !opts.path) return url
   const pathKeys = Object.keys(opts.path)
   pathKeys.forEach((key) => {
@@ -17,8 +17,4 @@ function convertRESTAPI(url, opts) {
     url = url.replace(r, opts.path[key])
   })
   return url
-}
-export {
-  createAPI,
-  convertRESTAPI
 }
