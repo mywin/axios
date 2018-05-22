@@ -1,6 +1,7 @@
 import instance from './instance'
 import { convertRESTAPI } from '{{$$.relative("util")}}'
-<% _.forEach(data.mocks, function(mock){ %>/** {{mock.description}} */
+<% _.forEach(data.mocks, function(mock){ %>
+// {{mock.description}}
 const {{$$.convertMethod(mock)}} = (opts) => {
   return instance({
     method: '{{mock.method}}',
